@@ -1,0 +1,118 @@
+/* Estilos Globais e Reset Básico */
+body {
+    font-family: 'Inter', sans-serif; /* Fonte principal do projeto */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave para mudança de tema */
+}
+
+/* Variáveis CSS para Temas (Claro e Escuro) */
+/* Estas variáveis são usadas para facilitar a customização e a troca de temas */
+:root {
+    /* Tema Claro (Padrão) */
+    --bg-color: #f8fafc; /* Cor de fundo principal */
+    --text-color: #1e293b; /* Cor de texto principal */
+    --card-bg-color: #ffffff; /* Cor de fundo para cards/elementos destacados */
+    --primary-color: #0284c7; /* Cor primária (acentos, botões) */
+    --primary-text-color: #ffffff; /* Cor de texto para usar sobre a cor primária */
+    --secondary-text-color: #475569; /* Cor de texto secundária (menos destaque) */
+    --border-color: #e2e8f0; /* Cor para bordas */
+    --icon-color: #334155; /* Cor para ícones */
+}
+
+html.dark {
+    /* Tema Escuro */
+    --bg-color: #0f172a;
+    --text-color: #e2e8f0;
+    --card-bg-color: #1e293b;
+    --primary-color: #38bdf8;
+    --primary-text-color: #0f172a;
+    --secondary-text-color: #94a3b8;
+    --border-color: #334155;
+    --icon-color: #cbd5e1;
+}
+
+/* Aplicação das variáveis de tema */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Estilos para Componentes reutilizáveis (ex: Cards, Botões) */
+.card {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    /* Outros estilos de card como padding, border-radius são aplicados via Tailwind no HTML */
+}
+
+.primary-bg { 
+    background-color: var(--primary-color); 
+}
+.primary-text { 
+    color: var(--primary-color); 
+}
+
+.primary-button {
+    background-color: var(--primary-color);
+    color: var(--primary-text-color);
+    /* Estilos de padding, rounded, etc., são aplicados via Tailwind no HTML */
+}
+.primary-button:hover {
+    opacity: 0.9; /* Efeito de hover sutil */
+}
+
+.secondary-text { 
+    color: var(--secondary-text-color); 
+}
+.border-color { 
+    border-color: var(--border-color); 
+}
+.icon-color { 
+    color: var(--icon-color); 
+}
+
+/* Estilização da Barra de Rolagem (Opcional e específico para Webkit) */
+::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+}
+::-webkit-scrollbar-track {
+    background: var(--card-bg-color); /* Fundo da trilha da barra de rolagem */
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color); /* Cor do "polegar" da barra de rolagem */
+    border-radius: 4px; /* Bordas arredondadas */
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+    opacity: 0.8; /* Leve transparência no hover */
+}
+
+/* Estilos para Tooltips (dicas de interface que aparecem ao passar o mouse) */
+/* O atributo 'data-tooltip' no HTML é usado para definir o texto da tooltip */
+[data-tooltip]:hover::after {
+    content: attr(data-tooltip); /* Pega o texto do atributo data-tooltip */
+    position: absolute; /* Posicionamento em relação ao elemento pai */
+    bottom: 100%; /* Posiciona acima do elemento */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajuste fino para centralização */
+    margin-bottom: 5px; /* Espaçamento do elemento */
+    padding: 4px 8px; /* Espaçamento interno */
+    background-color: #333; /* Fundo escuro para contraste */
+    color: white; /* Texto branco */
+    border-radius: 4px; /* Bordas arredondadas */
+    font-size: 0.75rem; /* Tamanho da fonte (12px) */
+    white-space: nowrap; /* Evita quebra de linha na tooltip */
+    z-index: 10; /* Garante que a tooltip fique sobre outros elementos */
+}
+[data-tooltip] {
+    position: relative; /* Necessário para o posicionamento absoluto do ::after */
+}
+
+/* Estilo do Cursor Piscante para o Efeito de Digitação */
+.blinking-cursor {
+    animation: blink 1s step-end infinite; /* Animação de piscar */
+    font-weight: bold; /* Torna o cursor mais visível */
+    color: var(--primary-color); /* Cor do cursor baseada no tema */
+}
+@keyframes blink { /* Define a animação 'blink' */
+  from, to { opacity: 1; } /* Visível */
+  50% { opacity: 0; } /* Invisível (meio da animação) */
+}
