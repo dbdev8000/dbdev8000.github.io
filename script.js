@@ -1,100 +1,89 @@
-// Aguarda o DOM (Document Object Model) ser completamente carregado e parseado antes de executar o script
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // Inicializa a biblioteca AOS (Animate On Scroll) para animações ao rolar a página
+    // Initialize AOS (Animate On Scroll)
     AOS.init({
-        duration: 800, // Duração da animação em milissegundos
-        once: true,    // Define se a animação deve ocorrer apenas uma vez (ao rolar para baixo)
+        duration: 800, // values from 0 to 3000, with step 50ms
+        once: true,    // whether animation should happen only once - while scrolling down
     });
 
-    // Renderiza os ícones da biblioteca Lucide que estão no HTML (ex: <i data-lucide="nome-do-icone"></i>)
+    // Initialize Lucide Icons
     lucide.createIcons();
 
-    // --- LÓGICA DE ALTERNÂNCIA DE TEMA (CLARO/ESCURO) ---
-    const themeToggle = document.getElementById('theme-toggle'); // Botão de alternância de tema
-    const htmlElement = document.documentElement; // Elemento <html> para aplicar a classe 'dark'
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement;
 
-    // Função para aplicar o tema (claro ou escuro) na página
+    // Function to apply theme (called on load and on toggle)
     function applyTheme(theme) {
         if (theme === 'dark') {
-            htmlElement.classList.add('dark'); // Adiciona a classe 'dark' para ativar estilos do tema escuro
+            htmlElement.classList.add('dark');
         } else {
-            htmlElement.classList.remove('dark'); // Remove a classe 'dark' para usar estilos do tema claro
+            htmlElement.classList.remove('dark');
         }
-        // Re-renderiza os ícones Lucide, pois alguns (como sol/lua) podem mudar com o tema
+        // Re-create icons if they change with the theme
+        // (e.g., sun/moon icon itself might need this if not handled by CSS visibility)
         lucide.createIcons(); 
     }
 
-    // Verifica se há um tema salvo no localStorage ou usa a preferência do sistema operacional
+    // Check saved theme in localStorage or system preference
     let currentTheme = localStorage.getItem('theme');
-    if (!currentTheme) { // Se não houver tema salvo no localStorage
-        currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; // Verifica preferência do SO
+    if (!currentTheme) {
+        currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
-    applyTheme(currentTheme); // Aplica o tema determinado
+    applyTheme(currentTheme);
     
-    // Event listener para o clique no botão de alternância de tema
     themeToggle.addEventListener('click', () => {
-        // Determina o novo tema baseado na presença da classe 'dark'
         const newTheme = htmlElement.classList.contains('dark') ? 'light' : 'dark';
-        applyTheme(newTheme); // Aplica o novo tema
-        localStorage.setItem('theme', newTheme); // Salva a preferência de tema no localStorage
+        applyTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
     });
     
-    // --- LÓGICA DE ALTERNÂNCIA DE IDIOMA ---
-    const languageToggle = document.getElementById('language-toggle'); // Botão de alternância de idioma
-    const currentLangText = document.getElementById('current-lang-text'); // Span que exibe o idioma atual (PT/EN)
-    let currentLanguage = localStorage.getItem('language') || 'pt'; // Pega idioma salvo ou usa 'pt' como padrão
-    
-    const typedSubtitleElement = document.getElementById('typed-subtitle'); // Elemento h2 para o efeito de digitação
-    let typingInterval; // Variável para controlar o intervalo da animação de digitação
+    // Language Toggle
+    const languageToggle = document.getElementById('language-toggle');
+    const currentLangText = document.getElementById('current-lang-text');
+    let currentLanguage = localStorage.getItem('language') || 'pt';
+    const typedSubtitleElement = document.getElementById('typed-subtitle');
+    let typingInterval; 
 
-    // Textos para o subtítulo com efeito de digitação, baseados nos atributos data-lang do HTML
     const subtitleTexts = {
         pt: typedSubtitleElement.getAttribute('data-lang-pt'),
         en: typedSubtitleElement.getAttribute('data-lang-en')
     };
 
-    // Função para o efeito de digitação
     function typeEffect(element, text, speed = 100) {
-        clearInterval(typingInterval); // Limpa qualquer animação de digitação anterior para evitar sobreposição
-        let charIndex = 0; // Índice do caractere atual a ser digitado
-        element.innerHTML = ''; // Limpa o conteúdo do elemento antes de começar a digitar
+        clearInterval(typingInterval); 
+        let charIndex = 0;
+        element.innerHTML = ''; 
 
         function type() {
-            if (charIndex < text.length) { // Se ainda houver caracteres para digitar
-                // Adiciona o próximo caractere e o cursor piscante
+            if (charIndex < text.length) {
                 element.innerHTML = text.substring(0, charIndex + 1) + '<span class="blinking-cursor">|</span>';
                 charIndex++;
-                typingInterval = setTimeout(type, speed); // Agenda a digitação do próximo caractere
+                typingInterval = setTimeout(type, speed);
             } else {
-                element.innerHTML = text; // Remove o cursor quando a digitação terminar
+                element.innerHTML = text; 
             }
         }
-        type(); // Inicia a função de digitação
+        type();
     }
 
-    // Função para atualizar todos os textos da página com base no idioma selecionado
     function updateTexts(lang) {
-        // Itera sobre todos os elementos que têm o atributo 'data-lang-pt'
         document.querySelectorAll('[data-lang-pt]').forEach(el => {
-            // O elemento do subtítulo com efeito de digitação é tratado separadamente pela função typeEffect
+            // Skip the typed element here, it's handled by typeEffect
             if (el.id === 'typed-subtitle') return; 
             
-            // Determina qual atributo data-lang usar (pt ou en)
             const translationKey = lang === 'pt' ? 'langPt' : 'langEn';
-            if (el.dataset[translationKey]) { // Verifica se a tradução para o idioma existe
-                el.innerText = el.dataset[translationKey]; // Atualiza o texto do elemento
-                // Se o elemento for o <title> da página, atualiza o título da aba do navegador
+            if (el.dataset[translationKey]) {
+                el.innerText = el.dataset[translationKey];
                 if (el.tagName === 'TITLE') document.title = el.dataset[translationKey];
             }
         });
-        currentLangText.innerText = lang.toUpperCase(); // Atualiza o indicador de idioma (PT/EN)
-        htmlElement.lang = lang === 'pt' ? 'pt-BR' : 'en'; // Define o atributo 'lang' do elemento <html>
+        currentLangText.innerText = lang.toUpperCase();
+        htmlElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
 
-        // (Re)inicia o efeito de digitação para o subtítulo com o texto do idioma correto
+        // (Re)start typed effect for the current language
         typeEffect(typedSubtitleElement, lang === 'pt' ? subtitleTexts.pt : subtitleTexts.en);
 
-        // Atualiza os textos dos tooltips dos botões de tema e idioma
+        // Update tooltips for theme and language toggles
         const themeTooltipBasePt = 'Mudar Tema';
         const themeTooltipBaseEn = 'Change Theme';
         themeToggle.setAttribute('data-tooltip', lang === 'pt' ? themeTooltipBasePt : themeTooltipBaseEn);
@@ -104,51 +93,49 @@ document.addEventListener('DOMContentLoaded', function() {
         languageToggle.setAttribute('data-tooltip', lang === 'pt' ? langTooltipBasePt : langTooltipBaseEn);
     }
     
-    // Event listener para o clique no botão de alternância de idioma
     languageToggle.addEventListener('click', () => {
-        currentLanguage = currentLanguage === 'pt' ? 'en' : 'pt'; // Alterna o idioma
-        localStorage.setItem('language', currentLanguage); // Salva a preferência no localStorage
-        updateTexts(currentLanguage); // Atualiza os textos na página
+        currentLanguage = currentLanguage === 'pt' ? 'en' : 'pt';
+        localStorage.setItem('language', currentLanguage);
+        updateTexts(currentLanguage);
     });
 
-    // Define o ano atual no rodapé
+    // Set current year in footer
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
-    // --- LÓGICA DO MENU MOBILE ---
-    const mobileMenuButton = document.getElementById('mobile-menu-button'); // Botão para abrir/fechar menu mobile
-    const mobileMenu = document.getElementById('mobile-menu'); // O contêiner do menu mobile
-    const navLinksMobile = mobileMenu.querySelectorAll('a'); // Links dentro do menu mobile
+    // Mobile Menu
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinksMobile = mobileMenu.querySelectorAll('a'); // Corrected selector
 
-    // Event listener para o clique no botão do menu mobile
     mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden'); // Alterna a visibilidade do menu
-        const icon = mobileMenuButton.querySelector('i'); // Pega o elemento do ícone
-        // Muda o ícone (menu/fechar) com base na visibilidade do menu
+        mobileMenu.classList.toggle('hidden');
+        const icon = mobileMenuButton.querySelector('i');
+        // Update icon based on menu visibility
         icon.setAttribute('data-lucide', mobileMenu.classList.contains('hidden') ? 'menu' : 'x');
-        lucide.createIcons(); // Re-renderiza os ícones Lucide
+        lucide.createIcons(); // Re-render icons
     });
 
-    // Event listener para fechar o menu mobile ao clicar em um link dentro dele
+    // Close mobile menu when a link is clicked
     navLinksMobile.forEach(link => {
         link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden'); // Esconde o menu
-            // Reseta o ícone do botão para 'menu'
+            mobileMenu.classList.add('hidden');
+            // Reset menu icon to 'menu'
             mobileMenuButton.querySelector('i').setAttribute('data-lucide', 'menu');
-            lucide.createIcons(); // Re-renderiza os ícones Lucide
+            lucide.createIcons(); // Re-render icons
         });
     });
 
-    // --- LÓGICA DE ROLAGEM SUAVE PARA LINKS INTERNOS DA NAVBAR ---
+    // Smooth scroll for navbar links
     document.querySelectorAll('header a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault(); // Previne o comportamento padrão do link (salto instantâneo)
-            const targetElement = document.querySelector(this.getAttribute('href')); // Encontra o elemento alvo
+            e.preventDefault();
+            const targetElement = document.querySelector(this.getAttribute('href'));
             if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' }); // Rola suavemente até o elemento
+                targetElement.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
     
-    // Chama a função para configurar os textos iniciais da página com base no idioma salvo/padrão
+    // Initial text setup based on current language
     updateTexts(currentLanguage); 
 });

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth"> <head>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-lang-pt="Portfólio | Daniel Barbosa" data-lang-en="Portfolio | Daniel Barbosa">Portfólio | Daniel Barbosa</title>
@@ -14,7 +15,9 @@
     
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="antialiased overflow-x-hidden"> <header class="sticky top-0 z-50 shadow-md" style="background-color: var(--card-bg-color);">
+<body class="antialiased overflow-x-hidden">
+
+    <header class="sticky top-0 z-50 shadow-md" style="background-color: var(--card-bg-color);">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div>
                 <a href="#" class="text-2xl font-bold primary-text" data-lang-pt="Daniel Barbosa" data-lang-en="Daniel Barbosa">Daniel Barbosa</a>
@@ -29,11 +32,14 @@
                     <li><a href="#contact" class="hover:primary-text transition-colors" data-lang-pt="Contato" data-lang-en="Contact">Contato</a></li>
                 </ul>
                 <button id="theme-toggle" class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary-color)]" style="color: var(--icon-color);" data-tooltip="Mudar Tema">
-                    <i data-lucide="sun" class="block dark:hidden"></i> <i data-lucide="moon" class="hidden dark:block"></i> </button>
+                    <i data-lucide="sun" class="block dark:hidden"></i>
+                    <i data-lucide="moon" class="hidden dark:block"></i>
+                </button>
                 <div class="relative">
                     <button id="language-toggle" class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary-color)] flex items-center" style="color: var(--icon-color);" data-tooltip="Mudar Idioma">
                         <i data-lucide="globe-2" class="mr-1"></i>
-                        <span id="current-lang-text">PT</span> </button>
+                        <span id="current-lang-text">PT</span>
+                    </button>
                 </div>
                 <button id="mobile-menu-button" class="md:hidden p-2 rounded-md focus:outline-none" style="color: var(--icon-color);">
                     <i data-lucide="menu"></i>
@@ -53,9 +59,9 @@
     </header>
 
     <main class="container mx-auto px-6 py-12">
-
         <section id="hero" class="min-h-[70vh] flex flex-col md:flex-row items-center justify-between py-10 md:py-20">
-            <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0" data-aos="fade-right"> <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0" data-aos="fade-right">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">
                     <span data-lang-pt="Olá, eu sou" data-lang-en="Hi, I'm">Olá, eu sou</span>
                     <span class="primary-text">Daniel Barbosa</span>
                 </h1>
@@ -65,7 +71,8 @@
                 </p>
                 <a href="#contact" class="primary-button px-8 py-3 rounded-lg text-lg font-semibold transition-transform hover:scale-105" data-lang-pt="Entre em Contato" data-lang-en="Get in Touch">Entre em Contato</a>
             </div>
-            <div class="md:w-1/2 flex justify-center" data-aos="fade-left" data-aos-delay="200"> <img src="assets/foto-perfil.jpg" alt="Foto de Daniel Barbosa" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-xl border-4 border-[var(--primary-color)]">
+            <div class="md:w-1/2 flex justify-center" data-aos="fade-left" data-aos-delay="200">
+                 <img src="assets/foto-perfil.jpg" alt="Foto de Daniel Barbosa" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-xl border-4 border-[var(--primary-color)]">
             </div>
         </section>
 
@@ -73,8 +80,11 @@
             <h2 class="text-3xl font-bold text-center mb-2 primary-text" data-aos="fade-up" data-lang-pt="Sobre Mim" data-lang-en="About Me">Sobre Mim</h2>
             <div class="w-20 h-1 primary-bg mx-auto mb-12" data-aos="fade-up" data-aos-delay="100"></div>
             <div class="max-w-3xl mx-auto card p-8 rounded-lg shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300" data-aos="zoom-in-up">
-                <p class="text-lg leading-relaxed" data-lang-pt="Desenvolvedor Back-end com foco em Java, sou dedicado à criação e otimização de aplicações robustas e eficientes. Minha experiência consolidada abrange Java, Spring Boot, Python, C# e Linux, sempre aplicando as melhores práticas de desenvolvimento e arquiteturas de software modernas. Sou proativo, colaborativo e possuo uma forte capacidade de resolução de problemas, buscando constantemente adaptar-me e aprender novas tecnologias. Apaixonado por tecnologia, estou sempre em busca de novos desafios e oportunidades para aplicar e aprimorar minhas habilidades, contribuindo ativamente para o sucesso de projetos inovadores." data-lang-en="I am a Back-end Developer specializing in Java, dedicated to creating and optimizing robust and efficient applications. My expertise includes Java, Spring Boot, Python, C#, and Linux, complemented by a strong understanding of software development best practices and modern architectures. Proactive and collaborative, I excel at problem-solving and am always eager to adapt and learn new technologies. Passionate about leveraging technology to build impactful solutions, I am constantly seeking challenging opportunities where I can apply and enhance my skills to contribute to the success of innovative projects.">
-                    {Conteúdo do Sobre Mim será carregado pelo JavaScript}
+                <p class="text-lg leading-relaxed mb-4" data-lang-pt="Sou um desenvolvedor de software apaixonado por tecnologia e resolução de problemas. Com uma base sólida em Ciência da Computação e experiência prática no desenvolvimento de aplicações, busco constantemente aprender novas tecnologias e aprimorar minhas habilidades para entregar soluções de alta qualidade." data-lang-en="I am a software developer passionate about technology and problem-solving. With a solid foundation in Computer Science and practical experience in application development, I constantly seek to learn new technologies and improve my skills to deliver high-quality solutions.">
+                    Sou um desenvolvedor de software apaixonado por tecnologia e resolução de problemas. Com uma base sólida em Ciência da Computação e experiência prática no desenvolvimento de aplicações, busco constantemente aprender novas tecnologias e aprimorar minhas habilidades para entregar soluções de alta qualidade.
+                </p>
+                <p class="text-lg leading-relaxed" data-lang-pt="Meu objetivo é contribuir para projetos desafiadores, colaborando com equipes talentosas e utilizando a tecnologia para criar um impacto positivo." data-lang-en="My goal is to contribute to challenging projects, collaborating with talented teams, and using technology to create a positive impact.">
+                    Meu objetivo é contribuir para projetos desafiadores, colaborando com equipes talentosas e utilizando a tecnologia para criar um impacto positivo.
                 </p>
             </div>
         </section>
@@ -191,201 +201,7 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script src="script.js" defer></script>
-</body>
-</html><!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth"> <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-lang-pt="Portfólio | Daniel Barbosa" data-lang-en="Portfolio | Daniel Barbosa">Portfólio | Daniel Barbosa</title>
     
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <script src="https://unpkg.com/lucide@0.292.0/dist/umd/lucide.min.js"></script>
-    
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="antialiased overflow-x-hidden"> <header class="sticky top-0 z-50 shadow-md" style="background-color: var(--card-bg-color);">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div>
-                <a href="#" class="text-2xl font-bold primary-text" data-lang-pt="Daniel Barbosa" data-lang-en="Daniel Barbosa">Daniel Barbosa</a>
-            </div>
-            <div class="flex items-center space-x-4 md:space-x-6">
-                <ul class="hidden md:flex space-x-6 items-center">
-                    <li><a href="#about" class="hover:primary-text transition-colors" data-lang-pt="Sobre" data-lang-en="About">Sobre</a></li>
-                    <li><a href="#skills" class="hover:primary-text transition-colors" data-lang-pt="Habilidades" data-lang-en="Skills">Habilidades</a></li>
-                    <li><a href="#experience" class="hover:primary-text transition-colors" data-lang-pt="Experiência" data-lang-en="Experience">Experiência</a></li>
-                    <li><a href="#education" class="hover:primary-text transition-colors" data-lang-pt="Formação" data-lang-en="Education">Formação</a></li>
-                    <li><a href="#courses" class="hover:primary-text transition-colors" data-lang-pt="Cursos" data-lang-en="Courses">Cursos</a></li>
-                    <li><a href="#contact" class="hover:primary-text transition-colors" data-lang-pt="Contato" data-lang-en="Contact">Contato</a></li>
-                </ul>
-                <button id="theme-toggle" class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary-color)]" style="color: var(--icon-color);" data-tooltip="Mudar Tema">
-                    <i data-lucide="sun" class="block dark:hidden"></i> <i data-lucide="moon" class="hidden dark:block"></i> </button>
-                <div class="relative">
-                    <button id="language-toggle" class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary-color)] flex items-center" style="color: var(--icon-color);" data-tooltip="Mudar Idioma">
-                        <i data-lucide="globe-2" class="mr-1"></i>
-                        <span id="current-lang-text">PT</span> </button>
-                </div>
-                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md focus:outline-none" style="color: var(--icon-color);">
-                    <i data-lucide="menu"></i>
-                </button>
-            </div>
-        </nav>
-        <div id="mobile-menu" class="hidden md:hidden pb-3" style="background-color: var(--card-bg-color);">
-            <ul class="flex flex-col items-center space-y-3">
-                <li><a href="#about" class="hover:primary-text transition-colors" data-lang-pt="Sobre" data-lang-en="About">Sobre</a></li>
-                <li><a href="#skills" class="hover:primary-text transition-colors" data-lang-pt="Habilidades" data-lang-en="Skills">Habilidades</a></li>
-                <li><a href="#experience" class="hover:primary-text transition-colors" data-lang-pt="Experiência" data-lang-en="Experience">Experiência</a></li>
-                <li><a href="#education" class="hover:primary-text transition-colors" data-lang-pt="Formação" data-lang-en="Education">Formação</a></li>
-                <li><a href="#courses" class="hover:primary-text transition-colors" data-lang-pt="Cursos" data-lang-en="Courses">Cursos</a></li>
-                <li><a href="#contact" class="hover:primary-text transition-colors" data-lang-pt="Contato" data-lang-en="Contact">Contato</a></li>
-            </ul>
-        </div>
-    </header>
-
-    <main class="container mx-auto px-6 py-12">
-
-        <section id="hero" class="min-h-[70vh] flex flex-col md:flex-row items-center justify-between py-10 md:py-20">
-            <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0" data-aos="fade-right"> <h1 class="text-4xl md:text-5xl font-bold mb-4">
-                    <span data-lang-pt="Olá, eu sou" data-lang-en="Hi, I'm">Olá, eu sou</span>
-                    <span class="primary-text">Daniel Barbosa</span>
-                </h1>
-                <h2 id="typed-subtitle" class="text-2xl md:text-3xl secondary-text mb-6 h-14 md:h-auto" data-lang-pt="Desenvolvedor de Software" data-lang-en="Software Developer"></h2>
-                <p class="mb-8 text-lg leading-relaxed" data-lang-pt="Transformando ideias em soluções de software inovadoras e eficientes. Focado em criar experiências de usuário impactantes e código de alta qualidade." data-lang-en="Transforming ideas into innovative and efficient software solutions. Focused on creating impactful user experiences and high-quality code.">
-                    Transformando ideias em soluções de software inovadoras e eficientes. Focado em criar experiências de usuário impactantes e código de alta qualidade.
-                </p>
-                <a href="#contact" class="primary-button px-8 py-3 rounded-lg text-lg font-semibold transition-transform hover:scale-105" data-lang-pt="Entre em Contato" data-lang-en="Get in Touch">Entre em Contato</a>
-            </div>
-            <div class="md:w-1/2 flex justify-center" data-aos="fade-left" data-aos-delay="200"> <img src="assets/foto-perfil.jpg" alt="Foto de Daniel Barbosa" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-xl border-4 border-[var(--primary-color)]">
-            </div>
-        </section>
-
-        <section id="about" class="py-16">
-            <h2 class="text-3xl font-bold text-center mb-2 primary-text" data-aos="fade-up" data-lang-pt="Sobre Mim" data-lang-en="About Me">Sobre Mim</h2>
-            <div class="w-20 h-1 primary-bg mx-auto mb-12" data-aos="fade-up" data-aos-delay="100"></div>
-            <div class="max-w-3xl mx-auto card p-8 rounded-lg shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300" data-aos="zoom-in-up">
-                <p class="text-lg leading-relaxed" data-lang-pt="Desenvolvedor Back-end com foco em Java, sou dedicado à criação e otimização de aplicações robustas e eficientes. Minha experiência consolidada abrange Java, Spring Boot, Python, C# e Linux, sempre aplicando as melhores práticas de desenvolvimento e arquiteturas de software modernas. Sou proativo, colaborativo e possuo uma forte capacidade de resolução de problemas, buscando constantemente adaptar-me e aprender novas tecnologias. Apaixonado por tecnologia, estou sempre em busca de novos desafios e oportunidades para aplicar e aprimorar minhas habilidades, contribuindo ativamente para o sucesso de projetos inovadores." data-lang-en="I am a Back-end Developer specializing in Java, dedicated to creating and optimizing robust and efficient applications. My expertise includes Java, Spring Boot, Python, C#, and Linux, complemented by a strong understanding of software development best practices and modern architectures. Proactive and collaborative, I excel at problem-solving and am always eager to adapt and learn new technologies. Passionate about leveraging technology to build impactful solutions, I am constantly seeking challenging opportunities where I can apply and enhance my skills to contribute to the success of innovative projects.">
-                    {Conteúdo do Sobre Mim será carregado pelo JavaScript}
-                </p>
-            </div>
-        </section>
-
-        <section id="skills" class="py-16">
-            <h2 class="text-3xl font-bold text-center mb-2 primary-text" data-aos="fade-up" data-lang-pt="Habilidades" data-lang-en="Skills">Habilidades</h2>
-            <div class="w-20 h-1 primary-bg mx-auto mb-12" data-aos="fade-up" data-aos-delay="100"></div>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="card p-6 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300" data-aos="fade-right" data-aos-offset="200">
-                    <h3 class="text-xl font-semibold mb-4" data-lang-pt="Habilidades Técnicas" data-lang-en="Technical Skills">Habilidades Técnicas</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="primary-button text-sm px-3 py-1 rounded-full">Java</span>
-                        <span class="primary-button text-sm px-3 py-1 rounded-full">Spring Boot</span>
-                        <span class="primary-button text-sm px-3 py-1 rounded-full">C#</span>
-                        <span class="primary-button text-sm px-3 py-1 rounded-full">Unity</span>
-                        <span class="primary-button text-sm px-3 py-1 rounded-full">Python</span>
-                        <span class="primary-button text-sm px-3 py-1 rounded-full">HTML</span>
-                        <span class="primary-button text-sm px-3 py-1 rounded-full">CSS</span>
-                        <span class="primary-button text-sm px-3 py-1 rounded-full">Linux</span>
-                        <span class="primary-button text-sm px-3 py-1 rounded-full">Git</span>
-                    </div>
-                </div>
-                <div class="card p-6 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300" data-aos="fade-left" data-aos-offset="200">
-                    <h3 class="text-xl font-semibold mb-4" data-lang-pt="Idiomas" data-lang-en="Languages">Idiomas</h3>
-                    <p class="secondary-text"><strong data-lang-pt="Inglês:" data-lang-en="English:">Inglês:</strong> <span data-lang-pt="Intermediário" data-lang-en="Intermediate">Intermediário</span></p>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience" class="py-16">
-            <h2 class="text-3xl font-bold text-center mb-2 primary-text" data-aos="fade-up" data-lang-pt="Experiência Profissional" data-lang-en="Professional Experience">Experiência Profissional</h2>
-            <div class="w-20 h-1 primary-bg mx-auto mb-12" data-aos="fade-up" data-aos-delay="100"></div>
-            <div class="card p-8 rounded-lg shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300" data-aos="zoom-in-up">
-                <div class="mb-6">
-                    <h3 class="text-2xl font-semibold" data-lang-pt="Desenvolvedor Freelance de Bots para Discord" data-lang-en="Freelance Discord Bot Developer">Desenvolvedor Freelance de Bots para Discord</h3>
-                    <p class="secondary-text text-sm mb-2" data-lang-pt="2023 - 2024" data-lang-en="2023 - 2024">2023 - 2024</p>
-                    <ul class="list-disc list-inside space-y-1 secondary-text">
-                        <li data-lang-pt="Desenvolvi bots personalizados para Discord utilizando Python, focados em automação e melhoria da experiência do usuário." data-lang-en="Developed custom Discord bots using Python, focusing on automation and improving user experience.">Desenvolvi bots personalizados para Discord utilizando Python, focados em automação e melhoria da experiência do usuário.</li>
-                        <li data-lang-pt="Implementei bots de avisos, interação com o chat e análise de dados do servidor." data-lang-en="Implemented bots for announcements, chat interaction, and server data analysis.">Implementei bots de avisos, interação com o chat e análise de dados do servidor.</li>
-                        <li data-lang-pt="Utilizei ferramentas e bibliotecas auxiliares para otimizar o desenvolvimento e a manutenção dos bots." data-lang-en="Utilized auxiliary tools and libraries to optimize bot development and maintenance.">Utilizei ferramentas e bibliotecas auxiliares para otimizar o desenvolvimento e a manutenção dos bots.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="education" class="py-16">
-            <h2 class="text-3xl font-bold text-center mb-2 primary-text" data-aos="fade-up" data-lang-pt="Formação Acadêmica" data-lang-en="Education">Formação Acadêmica</h2>
-            <div class="w-20 h-1 primary-bg mx-auto mb-12" data-aos="fade-up" data-aos-delay="100"></div>
-            <div class="card p-8 rounded-lg shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300" data-aos="zoom-in-up">
-                <h3 class="text-xl font-semibold" data-lang-pt="Bacharel em Ciência da Computação" data-lang-en="Bachelor's in Computer Science">Bacharel em Ciência da Computação</h3>
-                <p class="secondary-text" data-lang-pt="Universidade Cruzeiro do Sul - UNICSUL" data-lang-en="Universidade Cruzeiro do Sul - UNICSUL">Universidade Cruzeiro do Sul - UNICSUL</p>
-                <p class="secondary-text text-sm" data-lang-pt="2024 - Dezembro/2027 (Cursando)" data-lang-en="2024 - December/2027 (Ongoing)">2024 - Dezembro/2027 (Cursando)</p>
-            </div>
-        </section>
-
-        <section id="courses" class="py-16">
-            <h2 class="text-3xl font-bold text-center mb-2 primary-text" data-aos="fade-up" data-lang-pt="Cursos Livres" data-lang-en="Courses & Certifications">Cursos Livres</h2>
-            <div class="w-20 h-1 primary-bg mx-auto mb-12" data-aos="fade-up" data-aos-delay="100"></div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="card p-6 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300" data-aos="zoom-in-up" data-aos-delay="50">
-                    <h4 class="font-semibold" data-lang-pt="Curso de Java - Java 10x" data-lang-en="Java Course - Java 10x">Curso de Java - Java 10x</h4>
-                    <p class="secondary-text text-sm" data-lang-pt="(Cursando)" data-lang-en="(Ongoing)">(Cursando)</p>
-                </div>
-                <div class="card p-6 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300" data-aos="zoom-in-up" data-aos-delay="100">
-                    <h4 class="font-semibold" data-lang-pt="Curso de Desenvolvimento de Jogos - Oficina Indie" data-lang-en="Game Development Course - Oficina Indie">Curso de Desenvolvimento de Jogos - Oficina Indie</h4>
-                    <p class="secondary-text text-sm" data-lang-pt="(Cursando)" data-lang-en="(Ongoing)">(Cursando)</p>
-                </div>
-                <div class="card p-6 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300" data-aos="zoom-in-up" data-aos-delay="150">
-                    <h4 class="font-semibold" data-lang-pt="Curso de Arch Linux - Laboratório Slackjeff" data-lang-en="Arch Linux Course - Laboratório Slackjeff">Curso de Arch Linux - Laboratório Slackjeff</h4>
-                    <p class="secondary-text text-sm" data-lang-pt="(2025)" data-lang-en="(2025)">(2025)</p>
-                </div>
-                <div class="card p-6 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300" data-aos="zoom-in-up" data-aos-delay="200">
-                    <h4 class="font-semibold" data-lang-pt="Curso de Excel, Word e Informática - ZOE" data-lang-en="Excel, Word, and IT Course - ZOE">Curso de Excel, Word e Informática - ZOE</h4>
-                    <p class="secondary-text text-sm" data-lang-pt="(2023)" data-lang-en="(2023)">(2023)</p>
-                </div>
-                <div class="card p-6 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300" data-aos="zoom-in-up" data-aos-delay="250">
-                    <h4 class="font-semibold" data-lang-pt="Curso de Inglês básico - Cultura Inglesa" data-lang-en="Basic English Course - Cultura Inglesa">Curso de Inglês básico - Cultura Inglesa</h4>
-                    <p class="secondary-text text-sm" data-lang-pt="(2018 - 2022)" data-lang-en="(2018 - 2022)">(2018 - 2022)</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="py-16">
-            <h2 class="text-3xl font-bold text-center mb-2 primary-text" data-aos="fade-up" data-lang-pt="Contato" data-lang-en="Contact">Contato</h2>
-            <div class="w-20 h-1 primary-bg mx-auto mb-12" data-aos="fade-up" data-aos-delay="100"></div>
-            <div class="max-w-lg mx-auto card p-8 rounded-lg shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300" data-aos="zoom-in-up">
-                <p class="text-center text-lg mb-8" data-lang-pt="Vamos construir algo incrível juntos! Entre em contato." data-lang-en="Let's build something amazing together! Get in touch.">Vamos construir algo incrível juntos! Entre em contato.</p>
-                <div class="space-y-4">
-                    <a href="mailto:dbarbosa.code@gmail.com" class="flex items-center group">
-                        <i data-lucide="mail" class="w-6 h-6 mr-3 icon-color group-hover:primary-text transition-colors"></i>
-                        <span class="group-hover:primary-text transition-colors">dbarbosa.code@gmail.com</span>
-                    </a>
-                    <a href="tel:+5521971561425" class="flex items-center group">
-                        <i data-lucide="phone" class="w-6 h-6 mr-3 icon-color group-hover:primary-text transition-colors"></i>
-                        <span class="group-hover:primary-text transition-colors">+55 (21) 97156-1425</span>
-                    </a>
-                    <a href="https://linkedin.com/in/dbdev8000" target="_blank" rel="noopener noreferrer" class="flex items-center group">
-                        <i data-lucide="linkedin" class="w-6 h-6 mr-3 icon-color group-hover:primary-text transition-colors"></i>
-                        <span class="group-hover:primary-text transition-colors" data-lang-pt="LinkedIn" data-lang-en="LinkedIn">LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/dbdev8000" target="_blank" rel="noopener noreferrer" class="flex items-center group">
-                        <i data-lucide="github" class="w-6 h-6 mr-3 icon-color group-hover:primary-text transition-colors"></i>
-                        <span class="group-hover:primary-text transition-colors" data-lang-pt="GitHub" data-lang-en="GitHub">GitHub</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="border-t border-color py-8">
-        <div class="container mx-auto px-6 text-center secondary-text text-sm">
-            <p>&copy; <span id="current-year"></span> <span data-lang-pt="Daniel Barbosa. Todos os direitos reservados." data-lang-en="Daniel Barbosa. All rights reserved.">Daniel Barbosa. Todos os direitos reservados.</span></p>
-        </div>
-    </footer>
-
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="script.js" defer></script>
 </body>
 </html>
