@@ -2,7 +2,7 @@
 
 Bem-vindo ao repositório do meu portfólio pessoal! Este projeto foi desenvolvido para apresentar minhas habilidades, projetos e experiência como desenvolvedor de software.
 
-**✨ Veja ao vivo:** https://dbdev8000.github.io/https://dbdev8000.github.io
+**✨ Veja ao vivo:** https://dbdev8000.github.io
 
 ---
 
